@@ -25,24 +25,6 @@ def first_page():
     Creates the first page with file upload functionality.
     Returns two placeholder strings for demonstration.
     """
-    # Set up the Streamlit page configuration
-    st.set_page_config(
-        page_title="Neutral - Bias Detection",
-        page_icon="🔐",
-        layout="wide",
-        initial_sidebar_state="collapsed",
-    )
-
-    # st.title("File Upload Page")
-    
-    # Load external CSS
-    with open("static/style.css") as css_file:
-        st.markdown(f"<style>{css_file.read()}</style>", unsafe_allow_html=True)
-
-    # Load external HTML template
-    with open("templates/template.html") as html_file:
-        st.markdown(html_file.read(), unsafe_allow_html=True)
-
 
     # File upload for CV
     cv_file = st.file_uploader("Upload CV", type=['pdf', 'docx', 'txt'])

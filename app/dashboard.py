@@ -136,9 +136,12 @@ def final_analysis(analysis: str):
             mime="application/pdf",
         )
 
+
 # Function to send files to AI for analysis (your send_to_ai function)
 def send_to_ai(cv_path, decision_path):
     # Placeholder function for AI processing
+
+
     return "This is a placeholder analysis result."
 
 # Main application flow
