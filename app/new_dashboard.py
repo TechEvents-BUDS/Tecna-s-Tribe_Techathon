@@ -29,8 +29,8 @@ with open("templates/template.html") as html_file:
     st.markdown(html_file.read(), unsafe_allow_html=True)
 
 # Title and Description
-st.title("Neutral: Fair Hiring Analysis")
-st.write("Empowering equitable hiring. Upload documents to analyze biases and make informed decisions.")
+st.title("Towards Inclusive Hiring Practices")
+st.write("Analyze biases in hiring decisions to promote fairness and equity. Your journey to better insights starts here.")
 
 # Sidebar Navigation
 st.sidebar.header(" ")
