@@ -43,10 +43,11 @@ To run the Neutral project, follow these steps:
 To run the Neutral application, execute the following command from the project root directory:
 
 ```
-python app/app.py
+cd app
+streamlit run app.py
 ```
 
-This will start the application and make it accessible at `http://localhost:5000`.
+This will start the application.
 
 ## Usage
 
@@ -56,16 +57,7 @@ The Neutral application provides the following functionality:
 2. **Reporting**: The application generates detailed reports and visualizations to help HR departments understand and address the identified biases.
 3. **Recommendations**: The application provides specific recommendations and strategies for improving the fairness and inclusiveness of the hiring process.
 
-To use the application, navigate to `http://localhost:5000` in your web browser and follow the on-screen instructions.
-
-## Contributing
-
-If you would like to contribute to the Neutral project, please follow these guidelines:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Implement your changes and ensure they are tested.
-4. Submit a pull request with a detailed description of your changes.
+To use the application, navigate to `http://localhost:8501` in your web browser and follow the on-screen instructions.
 
 ## License
 
