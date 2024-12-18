@@ -451,6 +451,8 @@ elif choice == "Comparitive Analysis":
     chart.render();
     </script>
     """, height=500)
+# Automatically move to Final Analysis after Overview
+
 
 elif choice == "Final Analysis":
     if 'analysis_result' in st.session_state:
@@ -458,29 +460,21 @@ elif choice == "Final Analysis":
         st.markdown(
             f"""
             <div style="
-                border: 2px solid #a855f7; /* Purple border */
+                border: 2px solid #a855f7;
                 padding: 20px;
                 border-radius: 15px;
-                background: linear-gradient(135deg, #f9f7ff, #e9d5ff, #fce7f3); /* Gradient background */
-                color: #3b0764; /* Deep purple for text */
+                background: linear-gradient(135deg, #f9f7ff, #e9d5ff, #fce7f3);
+                color: #3b0764;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                font-family: Arial, sans-serif;
             ">
-                <h3 style="
-                    margin-bottom: 10px; 
-                    font-size: 1.5em; 
-                    color: #7e22ce; /* Purple heading */
-                ">🌟 Final Analysis Result</h3>
-                <p style="
-                    margin: 0; 
-                    font-size: 1.1em; 
-                    line-height: 1.6; 
-                ">{st.session_state.analysis_result}</p>
+                <h3 style="margin-bottom: 10px; color: #7e22ce;">🌟 Final Analysis Result</h3>
+                <p style="margin: 0; font-size: 1.1em;">{st.session_state.analysis_result}</p>
             </div>
             """,
             unsafe_allow_html=True
         )
-
+    else:
+        st.write("No analysis result available yet. Upload your files in earlier steps!")
 # Footer
 st.write("---")
 st.write("Built by Tecna's Tribe ❤️")
