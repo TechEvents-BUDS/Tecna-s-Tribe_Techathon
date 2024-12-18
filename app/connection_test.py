@@ -109,8 +109,11 @@ def first_page():
         if cv_file and decision_file:
             st.success("Files uploaded and saved successfully! Starting analysis...", icon="📊")
             cv = pdf_to_text(cv_file)
+            print(cv)
             decision = pdf_to_text(decision_file)
+            print(decision)
             analysis_result = send_to_ai(cv, decision)
+            st.session_state.analysis_result = analysis_result
             return analysis_result
         else:
             st.error("Upload both files")
@@ -249,6 +252,7 @@ def send_to_ai(cv, decision):
 
     ai = AI(SYSTEM_PROMPT)
     new_columns = ai.generate_response(user_req)
+    print(new_columns)
     # ml_decision = get_ml_decision(new_columns)
     ml_decision = 'BIASED'
     new_prompt = f""" 
