@@ -474,4 +474,4 @@ elif choice == "Final Analysis":
 
 # Footer
 st.write("---")
-st.write("Built with ❤️ using Streamlit and ApexCharts.")
+st.write("Built by Tecna's Tribe ❤️")
