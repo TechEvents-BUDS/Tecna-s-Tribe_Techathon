@@ -453,7 +453,24 @@ elif choice == "Comparitive Analysis":
 
 elif choice == "Final Analysis":
     if 'analysis_result' in st.session_state:
-        final_analysis(st.session_state.analysis_result)  # Display the analysis result
+        # Theme-aware content styling
+        st.markdown(
+            f"""
+            <div style="
+                border: 1px solid #ddd;
+                padding: 15px;
+                border-radius: 10px;
+                background-color: rgba(240, 240, 240, 0.8);
+                color: inherit;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            ">
+                <h3 style="margin-bottom: 10px;">Final Analysis Result</h3>
+                <p style="margin: 0;">{st.session_state.analysis_result}</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
 
 # Footer
 st.write("---")
