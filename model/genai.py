@@ -2,10 +2,12 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 from typing import Optional, List, Dict
+from together import Together
 
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEy")
+TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 
 
 class AI:
@@ -66,3 +68,24 @@ class AI:
             # Reset to initial state
             self.messages = [self.messages[0]]
 
+
+import os
+import openai
+
+class Classify:
+    def __init__(self, model="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"):
+        self.client = openai.OpenAI(
+            api_key=os.environ.get("TOGETHER_API_KEY"),
+            base_url="https://api.together.xyz/v1"
+        )
+        self.model = model
+
+    def generate_response(self, user_input):
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": "You are a travel agent. Be descriptive and helpful."},
+                {"role": "user", "content": user_input},
+            ]
+        )
+        return response.choices[0].message.content

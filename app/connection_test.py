@@ -251,10 +251,17 @@ def send_to_ai(cv, decision):
     '''
 
     ai = AI(SYSTEM_PROMPT)
+    print("SENDTOAI FUNCTION *****************")
+    print(cv)
     new_columns = ai.generate_response(user_req)
+
     print(new_columns)
+
+    print("EEEEENDDDD")
     # ml_decision = get_ml_decision(new_columns)
+    
     ml_decision = 'BIASED'
+
     new_prompt = f""" 
     You know the following things
     CV (delimited by triple backticks) : ```{cv}```,

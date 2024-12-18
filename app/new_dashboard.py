@@ -85,8 +85,8 @@ df_racism = pd.DataFrame(racism_data)
 
 # Convert to DataFrame
 df_bias = pd.DataFrame(bias_data)
+import streamlit as st
 
-# Function for the file upload and first analysis (this is your first_page logic)
 def first_page():
     """
     Creates the first page with file upload functionality.
@@ -108,18 +108,24 @@ def first_page():
         
         if cv_file and decision_file:
             st.success("Files uploaded and saved successfully! Starting analysis...", icon="📊")
-            cv = pdf_to_text(cv_file)
-            decision = pdf_to_text(decision_file)
-            analysis_result = send_to_ai(cv, decision)
+            
+            # Spinner for processing
+            with st.spinner("Analyzing documents, please wait..."):
+                cv = pdf_to_text(cv_file)
+                decision = pdf_to_text(decision_file)
+                analysis_result = send_to_ai(cv, decision)
+            
+            st.success("Process Completed. Head to Final Analysis to view.")
             return analysis_result
         else:
             st.error("Upload both files")
+        
         # Switch to analysis page
         st.session_state.page = 'analysis'
         
         # Use st.rerun() instead of experimental_rerun()
         st.rerun()
-    
+
 
 
 # Function for displaying the final analysis result (this is your final_analysis logic)
