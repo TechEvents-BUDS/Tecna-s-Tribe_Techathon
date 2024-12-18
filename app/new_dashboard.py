@@ -471,7 +471,6 @@ elif choice == "Final Analysis":
             unsafe_allow_html=True
         )
 
-
 # Footer
 st.write("---")
 st.write("Built by Tecna's Tribe ❤️")
