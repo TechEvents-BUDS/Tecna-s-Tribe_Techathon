@@ -28,8 +28,8 @@ with open("templates/template.html") as html_file:
     st.markdown(html_file.read(), unsafe_allow_html=True)
 
 # Title and Description
-st.title("Neutral AI Project Dashboard")
-st.write("A beginner-friendly dashboard for visualizing and interacting with the Neutral AI project.")
+st.title("Neutral: Fair Hiring Analysis")
+st.write("Empowering equitable hiring. Upload documents to analyze biases and make informed decisions.")
 
 # Sidebar Navigation
 st.sidebar.header(" ")
