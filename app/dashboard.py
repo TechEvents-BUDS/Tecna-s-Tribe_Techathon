@@ -150,7 +150,7 @@ def send_to_ai(cv_path, decision_path):
     '''
     ai = AI(SYSTEM_PROMPT)
     new_columns = ai.generate_response(user_req)
-    ml_decision = 'BIASED'
+    ml_decision = 'BIASED' # add ml response
     new_prompt = f""" 
     CV (delimited by triple backticks): ```{cv}```,
     Decision (delimited by double backticks): ``{decision}```,
